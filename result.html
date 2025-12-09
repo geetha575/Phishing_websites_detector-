@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='result.css')}}">
+    </head>
+ 
+    <body>
+        <div class="content">
+            <h1 class="h1">URL Checked Result</h1>
+            <p class="text-url">The URL is: <span class="{{'legit' if prediction_text=='Legitimate' else 'phishing'}}">{{prediction_text}}</span></p>
+             <p class="url">URL: {{url}}</p>
+            {% if features %}
+                 <p class="features">Features which trigged the webiste as Phishing:{{features}}</p>
+                 {% endif %}
+                 <a href="{{url_for('home')}}"class="btn-blue-outline mx-1">Check another URL</a>
+                
+        </div>
+    </body>
+</html>

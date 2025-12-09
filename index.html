@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='background.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        h1 {
+            color: rgb(223, 88, 196);
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        
+
+        input[type="text"] {
+            font-size: 20px;
+            padding: 20px;
+            width: 180%;
+            margin-bottom: 30px;
+            
+        }
+
+        input[type="submit"] {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: rgb(116, 127, 226);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(90, 100, 200);
+            
+        }
+        .form-container {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+        
+}
+
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <h1>Phishing Websites Detector</h1><br><br>
+    <div class="form-container">
+        <form action="{{url_for('predict')}}" method="POST">
+            <label for="url">Enter The URL to Check:</label><br><br>
+            <input type="text"  name="url" placeholder="Enter URL" required>
+            <input type="submit" value="Check">
+        </form>   
+
+    </div>
+</body>
+
+</html>
+    
